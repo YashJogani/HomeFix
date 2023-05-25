@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Orders</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="css/orders-styles.css" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <script type="module" src="https://unpkg.com/ionicons@5.2/dist/ionicons/ionicons.esm.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="/"><img class="home-logo" src="Images/logo.png"></a>
+        <div class="nav-bar">
+            <a href="/">Home</a>
+            <a href="/profile"><%= username %></a>
+            <a href="/cart">Cart</a>
+            <a class="currentpage"href="/orders">Orders</a>
+            <a href="/">About us</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="div-orders">
+            <h1>Orders</h1>
+            <hr>
+            <% if (!orders.length) { %>
+                <div class="no-order-placed">
+                    <img src="Images/no-order-placed.png">
+                    <h2>You haven't booked any Service yet!</h2>
+                </div>
+            <% } else { %>
+            <div class="orders">
+                <% orders.reverse().forEach(function(order) { %>
+                <div class="order">
+                    <div class="order-details">
+                        <div>
+                            <h2>Service ID: </h2>
+                            <h3><%= order.orderId %></h3>
+                        </div>
+                        <div>
+                            <h2>Order Total: </h2>
+                            <h3>₹ <%= order.totalPrice %></h3>
+                        </div>
+                        <div>
+                            <h2>Services: </h2>
+                            <h3><%= order.totalItems %></h3>
+                        </div>
+                    </div>
+
+                    <div class="order-details">
+                        <% if (order.serviceDate) { %>
+                        <div>
+                            <h2>Service Date: </h2>
+                            <h3><%= order.serviceDate %></h3>
+                        </div>
+                        <% } else { %>
+                        <div>
+                            <h2>Expected Service Date: </h2>
+                            <h3><%= order.expectedServiceDate %></h3>
+                        </div>
+                        <% } %>
+
+                        <div>
+                            <h2>Service Status: </h2>
+                            <h5><%= order.serviceStatus %></h5>
+                        </div>
+                    </div>
+
+                    <div class="order-details">
+                        <div>
+                            <h2>Service Booked: </h2>
+                            <h3><%= order.orderPlaced %></h3>
+                        </div>
+                    </div>
+
+                    <a href="order-details?orderId=<%= order.orderId %>">View</a>
+                </div>
+                <% }) %>
+            </div>
+            <% } %>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a class="footer-link" href="/">About Us</a>
+            <a class="footer-link" href="/">Terms and Conditions</a>
+            <a class="footer-link" href="/">Privacy Policy</a>
+        </div>
+
+        <div class="line">
+            <hr>
+        </div>
+
+        <div class="company-details">
+            <img class="home-logo" src="Images/logo.png">
+            <p class="company-registration">© 2023 Homefix Pvt. Ltd.</p>
+
+            <a class="social-link" href="https://www.twitter.com" target="_blank"><ion-icon
+                    name="logo-twitter"></ion-icon></a>
+            <a class="social-link" href="https://www.youtube.com" target="_blank"><ion-icon
+                    name="logo-youtube"></ion-icon></a>
+            <a class="social-link" href="https://www.instagram.com" target="_blank"><ion-icon
+                    name="logo-instagram"></ion-icon></a>
+        </div>
+    </footer>
+</body>
+
+</html>

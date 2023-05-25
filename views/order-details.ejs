@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Order Details</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="css/order-details-styles.css" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <script type="module" src="https://unpkg.com/ionicons@5.2/dist/ionicons/ionicons.esm.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="/"><img class="home-logo" src="Images/logo.png"></a>
+        <div class="nav-bar">
+            <a href="/">Home</a>
+            <a href="/profile"><%= username %></a>
+            <a href="/cart">Cart</a>
+            <a class="currentpage" href="/orders">Orders</a>
+            <a href="/">About us</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="div-order-details">
+            <div class="order-id">
+                <h1>Service ID: </h1>
+                <h2><%= order.orderId %></h2>
+            </div>
+            <hr>
+            <div class="order-details">
+                <div class="details">
+                    <div>
+                        <h3>Order Total: </h3>
+                        <h5>₹ <%= order.totalPrice %></h5>
+                    </div>
+                    <div>
+                        <h3>Services: </h3>
+                        <h5><%= order.totalItems %></h5>
+                    </div>
+                    <div>
+                        <h3>Service Booked:</h3>
+                        <h5><%= order.orderPlaced %></h5>
+                    </div>
+                    <% if (order.serviceDate) { %>
+                    <div>
+                        <h3>Service Date: </h3>
+                        <h5><%= order.serviceDate %></h5>
+                    </div>
+                    <% } else { %>
+                    <div>
+                        <h3>Expected Service Date: </h3>
+                        <h5><%= order.expectedServiceDate %></h5>
+                    </div>
+                    <% } %>
+                    <div>
+                        <h3>Service Status:</h3>
+                        <h6><%= order.serviceStatus %></h6>
+                    </div>
+                </div>
+
+                <div class="div-address">
+                    <div>
+                        <h3>Service Address: </h3>
+                    </div>
+                    <div>
+                        <p><%= order.firstname %> <%= order.lastname %>,</p>
+                        <p><%= order.address1 %>,</p>
+                        <p><%= order.address2 %>,</p>
+                        <p><%= order.city %>, <%= order.state %></p>
+                        <p>+91 <%= order.phonenumber %></p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Services</h2>
+            <hr>
+            <div class="div-services">
+                <% order.services.forEach(item => { %>
+                <div class="service">
+                    <div class="service-preview">
+                        <div class="service-preview-image">
+                            <img src="<%= item.image %>">
+                        </div>
+                        <h1><%= item.title %></h1>
+                    </div>
+
+                    <div class="div-service-details">
+                        <div class="service-details">
+                            <div>
+                                <h2>Price:</h2>
+                                <h2>Quantity:</h2>
+                            </div>
+
+                            <div>
+                                <h3>₹ <%= item.price %></h3>
+                                <h3><%= item.quantity %></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a class="footer-link" href="/">About Us</a>
+            <a class="footer-link" href="/">Terms and Conditions</a>
+            <a class="footer-link" href="/">Privacy Policy</a>
+        </div>
+
+        <div class="line">
+            <hr>
+        </div>
+
+        <div class="company-details">
+            <img class="home-logo" src="Images/logo.png">
+            <p class="company-registration">© 2023 Homefix Pvt. Ltd.</p>
+
+            <a class="social-link" href="https://www.twitter.com" target="_blank"><ion-icon
+                    name="logo-twitter"></ion-icon></a>
+            <a class="social-link" href="https://www.youtube.com" target="_blank"><ion-icon
+                    name="logo-youtube"></ion-icon></a>
+            <a class="social-link" href="https://www.instagram.com" target="_blank"><ion-icon
+                    name="logo-instagram"></ion-icon></a>
+        </div>
+    </footer>
+</body>
+
+</html>

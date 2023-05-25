@@ -1,0 +1,280 @@
+@font-face {
+    font-family: 'Inria Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/inriasans/v14/ptRMTiqXYfZMCOiVj9kQ1On4KA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Inria Sans";
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.home-logo {
+    height: 50px;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 70px;
+    background-color: #2c2c2c;
+}
+
+.nav-bar {
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+    align-items: center;
+    margin: auto 30px;
+}
+
+.nav-bar a {
+    font-family: "Inria Sans";
+    font-size: 16px;
+    padding: 7px 20px;
+    margin: 0px 3px;
+    color: #fff;
+    min-width: 80px;
+    text-align: center;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-bar a:hover {
+    background-color: #3c3c3c;
+}
+
+.currentpage {
+    background-color: #3c3c3c;
+}
+
+.container {
+    width: 70%;
+    min-width: 850px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+.div-order-details {
+    display: block;
+    font-family: "Inria Sans";
+    padding: 30px;
+    margin: 50px auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.div-order-details h1 {
+    font-size: 30px;
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+.div-order-details h2 {
+    font-size: 25px;
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+.order-id {
+    display: flex;
+    align-items: center;
+}
+
+.order-id h2 {
+    font-size: 25px;
+    padding-bottom: 10px;
+    margin: 0px 10px;
+}
+
+.div-order-details hr {
+    margin: 5px 0px;
+}
+
+.order-details {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.details {
+    display: block;
+}
+
+.details h3 {
+    font-size: 16px;
+    color: #5c5c5c;
+    margin: 7px 0px;
+    margin-right: 7px;
+}
+
+.details h5 {
+    font-size: 16px;
+    margin: 7px 0px;
+}
+
+.details h6 {
+    font-size: 16px;
+    color: #0d9b06;
+    margin: 7px 0px;
+}
+
+.details div {
+    display: flex;
+}
+
+.div-address {
+    display: flex;
+    padding-right: 10px;
+}
+
+.div-address h3 {
+    font-size: 16px;
+    margin: 7px;
+}
+
+.div-address p {
+    font-size: 16px;
+    margin: 7px 0px;
+}
+
+.div-address div {
+    display: inline-block;
+    max-width: 200px;
+}
+
+.div-services {
+    display: flex;
+    padding-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.service {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    width: 450px;
+    border-radius: 5px;
+    border: 1px solid #909090;
+    border-left: 5px solid #1884ff;
+}
+
+.service h1 {
+    font-size: 20px;
+    padding: 0px 10px;
+    margin: 0px;
+}
+
+.service-preview {
+    display: flex;
+    align-items: center;
+    width: 250px;
+}
+
+.service-preview-image {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    background-color: #DDEFFF;
+    border-radius: 10px;
+}
+
+.service-preview-image img {
+    width: 80%;
+    margin: auto;
+}
+
+.div-service-details {
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+}
+
+.service-details {
+    display: flex;
+    width: 125px;
+    justify-content: space-between;
+}
+
+.service-details div {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-details h2 {
+    font-size: 16px;
+    padding: 0px;
+    color: #5c5c5c;
+    margin: 5px 0px;
+}
+
+.service-details h3 {
+    font-size: 16px;
+    padding: 0px;
+    margin: 5px 0px;
+}
+
+.main-footer {
+    display: block;
+    padding: 20px 100px;
+    margin-top: auto;
+    background-color: #2c2c2c;
+}
+
+.footer-links {
+    display: flex;
+    padding: 10px 20px;
+}
+
+.footer-link {
+    font-family: 'Inria Sans';
+    font-size: 16px;
+    color: #fff;
+    margin: 0px 25px;
+    text-decoration: none;
+}
+
+.line {
+    padding: 0px 45px;
+    margin: 0px;
+}
+
+.company-details {
+    display: flex;
+    align-items: center;
+    padding: 10px 45px;
+}
+
+.company-registration {
+    font-family: 'Inria Sans';
+    font-size: 14px;
+    color: #fff;
+    margin: 0px 30px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    margin: 0px 15px;
+}
+
+.social-link ion-icon {
+    color: #fff;
+    transform: scale(1.2);
+}

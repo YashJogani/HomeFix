@@ -1,0 +1,223 @@
+@font-face {
+    font-family: 'Inria Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/inriasans/v14/ptRMTiqXYfZMCOiVj9kQ1On4KA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Inria Sans";
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-width: 1004px;
+    min-height: 100vh;
+}
+
+.home-logo {
+    height: 50px;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 70px;
+    background-color: #2c2c2c;
+}
+
+.nav-bar {
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+    align-items: center;
+    margin: auto 30px;
+}
+
+.nav-bar a {
+    font-family: "Inria Sans";
+    font-size: 16px;
+    padding: 7px 20px;
+    margin: 0px 3px;
+    color: #fff;
+    min-width: 80px;
+    text-align: center;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-bar a:hover {
+    background-color: #3c3c3c;
+}
+
+.currentpage {
+    background-color: #3c3c3c;
+}
+
+.container {
+    width: 65%;
+    min-width: 950px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+.div-orders {
+    display: block;
+    font-family: "Inria Sans";
+    margin: 50px auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.div-orders h1 {
+    font-family: "Inria Sans";
+    color: #000000;
+    font-size: 30px;
+    padding: 30px;
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+.div-orders hr {
+    margin: 5px 30px;
+}
+
+.orders {
+    padding: 16px 30px;
+    margin: 0px;
+}
+
+.order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    border: 1px solid #3c3c3c;
+}
+
+.order h2 {
+    font-size: 16px;
+    margin: 5px 0px;
+    margin-right: 5px;
+    color: #5c5c5c;
+}
+
+.order h3 {
+    font-size: 16px;
+    margin: 5px 0px;
+}
+
+.order h5 {
+    font-size: 16px;
+    margin: 5px 0px;
+    color: #0d9b06;
+}
+
+.order p {
+    font-size: 16px;
+    margin: 5px 0px;
+}
+
+.order-details {
+    display: block;
+}
+
+.order-details div {
+    display: flex;
+}
+
+.order a {
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    color: #ffffff;
+    border-radius: 3px;
+    background-color: #6551ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.order a:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.no-order-placed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    padding-top: 30px;
+    margin: auto;
+}
+
+.no-order-placed img {
+    width: 35%;
+}
+
+.no-order-placed h2 {
+    font-size: 22px;
+    padding-top: 10px;
+}
+
+.main-footer {
+    display: block;
+    padding: 20px 100px;
+    margin-top: auto;
+    background-color: #2c2c2c;
+}
+
+.footer-links {
+    display: flex;
+    padding: 10px 20px;
+}
+
+.footer-link {
+    font-family: 'Inria Sans';
+    font-size: 16px;
+    color: #fff;
+    margin: 0px 25px;
+    text-decoration: none;
+}
+
+.line {
+    padding: 0px 45px;
+    margin: 0px;
+}
+
+.company-details {
+    display: flex;
+    align-items: center;
+    padding: 10px 45px;
+}
+
+.company-registration {
+    font-family: 'Inria Sans';
+    font-size: 14px;
+    color: #fff;
+    margin: 0px 30px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    margin: 0px 15px;
+}
+
+.social-link ion-icon {
+    color: #fff;
+    transform: scale(1.2);
+}

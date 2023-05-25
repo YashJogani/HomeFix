@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Place an Order</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="css/place-order-styles.css" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <script type="module" src="https://unpkg.com/ionicons@5.2/dist/ionicons/ionicons.esm.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="/"><img class="home-logo" src="Images/logo.png"></a>
+        <div class="nav-bar">
+            <a href="/">Home</a>
+            <a href="/profile"><%= user.firstname %></a>
+            <a class="currentpage" href="/cart">Cart</a>
+            <a href="/orders">Orders</a>
+            <a href="/">About us</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="div-place-order">
+            <h1>Place an Order</h1>
+            <hr>
+
+            <form id="order-form" class="order-details">
+                <div class="customer-details">
+                    <h2>Customer Details</h2>
+
+                    <div class="multiple-form-items">
+                        <div class="form-items">
+                            <label for="firstname">Firstname</label>
+                            <input type="text" value="<%= user.firstname %>" name="firstname" maxlength="30"
+                                placeholder="Your Firstname" required>
+                        </div>
+                        <div class="form-items">
+                            <label for="lastname">Lastname</label>
+                            <input type="text" value="<%= user.lastname %>" name="lastname" maxlength="30"
+                                placeholder="Your Lastname">
+                        </div>
+                    </div>
+                    <div class="form-items">
+                        <label for="phonenumber">Phone Number</label>
+                        <input type="tel" name="phonenumber" pattern="[0-9]{10}" placeholder="00000 00000">
+                    </div>
+
+                    <h2>Service Address</h2>
+
+                    <div class="form-items">
+                        <label for="housenumber">Address Line 1</label>
+                        <input type="text" name="housenumber" placeholder="House No./ Society name" required>
+                    </div>
+
+                    <div class="form-items">
+                        <label for="address area">Address Line 2</label>
+                        <input type="text" name="area" placeholder="Area" required>
+                    </div>
+
+                    <div class="multiple-form-items">
+                        <div class="form-items">
+                            <label for="city">City</label>
+                            <input type="text" name="city" placeholder="City" required>
+                        </div>
+
+                        <div class="form-items">
+                            <label for="state">State</label>
+                            <input type="text" name="state" placeholder="State" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div-order-summary">
+                    <h1>Order Summary</h1>
+                    <hr>
+                    <div class="order-summary">
+                        <div class="order-details-title">
+                            <h2>Subtotal:</h2>
+                            <h2>Services:</h2>
+                            <h2>Expected Service Date:</h2>
+                        </div>
+                        <div class="order-details-value">
+                            <h3 id="total-price">₹ 0</h3>
+                            <h3 id="total-items">0</h3>
+                            <h3><%= dateFormatted %></h3>
+                        </div>
+                    </div>
+                    <hr>
+                    <button class="submit-button" type="submit">Place Order</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a class="footer-link" href="/">About Us</a>
+            <a class="footer-link" href="/">Terms and Conditions</a>
+            <a class="footer-link" href="/">Privacy Policy</a>
+        </div>
+
+        <div class="line">
+            <hr>
+        </div>
+
+        <div class="company-details">
+            <img class="home-logo" src="Images/logo.png">
+            <p class="company-registration">© 2023 Homefix Pvt. Ltd.</p>
+
+            <a class="social-link" href="https://www.twitter.com" target="_blank"><ion-icon
+                    name="logo-twitter"></ion-icon></a>
+            <a class="social-link" href="https://www.youtube.com" target="_blank"><ion-icon
+                    name="logo-youtube"></ion-icon></a>
+            <a class="social-link" href="https://www.instagram.com" target="_blank"><ion-icon
+                    name="logo-instagram"></ion-icon></a>
+        </div>
+    </footer>
+
+    <script>
+        const cartItems = <%- JSON.stringify(user.cart); %>
+    </script>
+
+    <script src="js/place-order-script.js"></script>
+</body>
+
+</html>

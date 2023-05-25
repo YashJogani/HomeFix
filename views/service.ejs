@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homefix | Services</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="css/service-styles.css" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <script type="module" src="https://unpkg.com/ionicons@5.2/dist/ionicons/ionicons.esm.js"></script>
+</head>
+
+<body>
+    <section class="container">
+        <div class="div-service-info">
+            <div class="service-info">
+                <h1 class="service-header">
+                    <%= serviceData.title %>
+                </h1>
+                <div>
+                    <ion-icon name="star"></ion-icon>
+                    <h2>
+                        <%= serviceData.rating %> Stars User Rating
+                    </h2>
+                </div>
+                <% serviceData.description.forEach(function(item) { %>
+                <h3>
+                    <%= item %>
+                </h3>
+                <% })%>
+            </div>
+
+            <div class="service-image">
+                <img src="<%= serviceData.image %>">
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="div-services">
+            <h1>Services</h1>
+        </div>
+
+        <div class="services">
+            <% serviceData.services.forEach(function(service) { %>
+            <div class="service">
+                <div class="service-details">
+                    <h2>
+                        <%= service.title %>
+                    </h2>
+                    <span>
+                        <h3>₹ <%= service.price %>
+                        </h3>
+                        <ion-icon name="ellipse"></ion-icon>
+                        <h3>
+                            <%= service.eta %> mins
+                        </h3>
+                    </span>
+                    <ul>
+                        <% service.description.forEach(function(item) { %>
+                        <li><b>
+                                <%= item %>
+                            </b></li>
+                        <% })%>
+                    </ul>
+                    <div class="add-btn">
+                        <button type="button" class="add-btn-default"><b>Add</b></button>
+                    </div>
+                </div>
+
+                <div class="service-preview">
+                    <div class="service-preview-image">
+                        <img src="<%= service.image %>">
+                    </div>
+                    <div class="quantity">
+                        <button type="button"
+                            style="background-color: #ff5050; border-top-left-radius: 3px; border-bottom-left-radius: 3px;">-</button>
+                        <input type="number" value="0" min="1" max="10" readonly>
+                        <button type="button"
+                            style="background-color: #0693ff; border-top-right-radius: 3px; border-bottom-right-radius: 3px;">+</button>
+                    </div>
+                </div>
+            </div>
+            <% })%>
+        </div>
+    </section>
+
+    <div class="cart">
+        <div class="cart-details">
+            <h1>Cart</h1>
+            <span>
+                <h2 id="price">Subtotal: ₹ 0</h2>
+                <ion-icon name="ellipse"></ion-icon>
+                <h2 id="items">Services: 0</h2>
+            </span>
+        </div>
+        <div class="checkout-div">
+            <button onclick="searchCart()" type="button">Next</button>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a class="footer-link" href="/">About Us</a>
+            <a class="footer-link" href="/">Terms and Conditions</a>
+            <a class="footer-link" href="/">Privacy Policy</a>
+        </div>
+
+        <div class="line">
+            <hr>
+        </div>
+
+        <div class="company-details">
+            <img class="home-logo" src="Images/logo.png">
+            <p class="company-registration">© 2023 Homefix Pvt. Ltd.</p>
+
+            <a class="social-link" href="https://www.twitter.com" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a class="social-link" href="https://www.youtube.com" target="_blank"><ion-icon name="logo-youtube"></ion-icon></a>
+            <a class="social-link" href="https://www.instagram.com" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+        </div>
+    </footer>
+
+    <script>
+        const username = <%- JSON.stringify(username); %>
+        const serviceid = <%- JSON.stringify(serviceData._id.toString()); %>
+        const services = <%- JSON.stringify(serviceData.services); %>
+        const cartItems = <%- JSON.stringify(cart); %>
+    </script>
+    <script src="js/service-script.js"></script>
+</body>
+
+</html>

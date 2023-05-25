@@ -1,0 +1,403 @@
+@font-face {
+    font-family: 'Inria Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/inriasans/v14/ptRMTiqXYfZMCOiVj9kQ1On4KA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Inria Sans";
+}
+
+html,
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+.home-logo {
+    height: 50px;
+}
+
+.container {
+    position: relative;
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.div-service-info {
+    display: flex;
+    padding: 30px 50px;
+}
+
+.service-info {
+    display: grid;
+    align-content: center;
+    width: 40%;
+    min-width: 500px;
+    padding: 20px 10px;
+}
+
+.service-header {
+    font-family: "Inria Sans";
+    color: #000000;
+    font-size: 35px;
+    margin: 0px;
+    padding: 5px 0px;
+}
+
+.service-info div {
+    display: flex;
+    align-items: center;
+    padding: 0px 0px;
+}
+
+.service-info ion-icon {
+    color: #1F92FB;
+}
+
+.service-info h2 {
+    font-family: "Inria Sans";
+    font-size: 16px;
+    color: #747474;
+    padding: 0px 10px;
+}
+
+.service-info h3 {
+    font-family: "Inria Sans";
+    font-size: 18px;
+    color: #747474;
+    margin: 0px 0px;
+    padding-top: 30px;
+}
+
+.service-image {
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+.service-image img {
+    width: 70%;
+    min-width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.div-services {
+    padding: 20px 60px;
+}
+
+.div-services h1 {
+    font-size: 30px;
+    color: #000000;
+    margin: 0px;
+    width: 600px;
+}
+
+.services {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0px 50px;
+    margin-bottom: 45px;
+    gap: 50px;
+}
+
+.service {
+    display: flex;
+    padding: 20px 10px;
+    width: 600px;
+    height: 300px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 0px 0px;
+}
+
+.service-details {
+    display: block;
+    position: relative;
+    width: 400px;
+}
+
+.service-details h2 {
+    font-family: "Inria Sans";
+    font-size: 22px;
+    color: #000000;
+    margin: 0px 0px;
+}
+
+.service-details span {
+    display: flex;
+    align-items: center;
+}
+
+.service-details ion-icon {
+    transform: scale(0.5);
+    padding: 0px 7px;
+}
+
+.service-details h3 {
+    display: inline-block;
+    font-size: 16px;
+    color: #000000;
+    padding: 10px 0px;
+    margin: 10px 0px;
+}
+
+.service-details ul {
+    font-family: "Inria Sans";
+    font-size: 16px;
+    font-weight: "bold";
+    color: #747474;
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+
+.service-details li {
+    padding: 5px 0px;
+    margin: 5px 10px;
+}
+
+.add-btn {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+}
+
+.add-btn button {
+    font-family: "Inria Sans";
+    font-size: 16px;
+    font-weight: "bold";
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-btn-default {
+    background-color: #0693ff;
+}
+
+.remove-btn {
+    background-color: #ff5050;
+}
+
+.add-btn button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.service-preview {
+    display: grid;
+    position: relative;
+    flex-grow: 1;
+    justify-content: end;
+}
+
+.service-preview-image {
+    display: flex;
+    width: 140px;
+    height: 140px;
+    background-color: #DDEFFF;
+    border-radius: 10px;
+}
+
+.service-preview-image img {
+    width: 70%;
+    height: fit-content;
+    margin: auto;
+}
+
+.quantity {
+    position: absolute;
+    right: 15px;
+    bottom: 0px;
+    display: none;
+}
+
+.quantity button {
+    width: 30px;
+    height: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.quantity button:active {
+    transform: scale(0.9);
+}
+
+.quantity input {
+    width: 30px;
+    height: 25px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-top: 1px solid #2c2c2c;
+    border-bottom: 1px solid #2c2c2c;
+}
+
+.quantity input:focus {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.cart {
+    display: none;
+    position: fixed;
+    padding: 10px 10px;
+    background-color: #fff;
+    width: 600px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 30px;
+    margin-top: 45px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    bottom: 0;
+}
+
+.cart.active {
+    animation: fade-in 0.2s linear;
+}
+
+.cart.notactive {
+    animation: fade-out 0.1s linear;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.cart-details {
+    display: block;
+    align-items: center;
+}
+
+.cart-details h1 {
+    font-family: "Inria Sans";
+    font-size: 24px;
+    padding: 0px 10px;
+    margin: 0px;
+}
+
+.cart-details span {
+    display: flex;
+    align-items: center;
+}
+
+.cart-details ion-icon {
+    transform: scale(0.5);
+}
+
+.cart-details h2 {
+    font-family: "Inria Sans";
+    font-size: 16px;
+    margin: 5px 10px;
+    color: #505050;
+}
+
+.checkout-div {
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.checkout-div button {
+    font-size: 16px;
+    width: 100px;
+    height: 40px;
+    background-color: #0d9b06;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.checkout-div button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.main-footer {
+    display: block;
+    padding: 20px 100px;
+    background-color: #2c2c2c;
+}
+
+.footer-links {
+    display: flex;
+    padding: 10px 20px;
+}
+
+.footer-link {
+    font-family: 'Inria Sans';
+    font-size: 16px;
+    color: #fff;
+    margin: 0px 25px;
+    text-decoration: none;
+}
+
+.line {
+    padding: 0px 45px;
+    margin: 0px;
+}
+
+.company-details {
+    display: flex;
+    align-items: center;
+    padding: 10px 45px;
+}
+
+.company-registration {
+    font-family: 'Inria Sans';
+    font-size: 14px;
+    color: #fff;
+    margin: 0px 30px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    margin: 0px 15px;
+}
+
+.social-link ion-icon {
+    color: #fff;
+    transform: scale(1.2);
+}

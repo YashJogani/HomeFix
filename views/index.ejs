@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homefix</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <script type="module" src="https://unpkg.com/ionicons@5.2/dist/ionicons/ionicons.esm.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="/"><img class="home-logo" src="Images/logo.png"></a>
+        <div class="nav-bar">
+            <a class="currentpage" href="/">Home</a>
+            <% if (username) { %>
+                <a href="/profile"><%= username %></a>
+                <a href="/cart">Cart</a>
+                <a href="/orders">Orders</a>
+            <% } else { %>
+                <a href="/login">Login</a>
+                <a href="/signup">Sign Up</a>
+            <% } %>
+            <a href="/">About us</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="section-header">Book service to fix your house to be like new</h2>
+
+        <div class="search-container">
+            <div class="dropdown">
+                <input type="text" class="textBox" placeholder="Select City" readonly>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+                <div class="option">
+                    <div onclick="show('Ahmedabad')">Ahmedabad</div>
+                    <div onclick="show('Surat')">Surat</div>
+                    <div onclick="show('Gandhinagar')">Gandhinagar</div>
+                </div>
+            </div>
+
+            <div class="div-search-bar">
+                <div class="search">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input spellcheck="false" type="text" placeholder="Search Services">
+                </div>
+                <ul class="search-suggestions"></ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="services-preview">
+            <div class="service-preview" style="background-color: #446CD4;">
+                <div class="service-preview-leftside">
+                    <p class="service-heading">Get your water pipe system clean and working</p>
+                    <div class="service-preview-btn">
+                        <a class="btn btn-book" href="/service?service=Plumbing Service">Book Now</a>
+                    </div>
+                </div>
+                <div class="service-preview-image-div">
+                    <img class="service-preview-image" src="Images/plumbing work.png">
+                </div>
+            </div>
+
+            <div class="service-preview" style="background-color: #3D8C4E;">
+                <div class="service-preview-leftside">
+                    <p class="service-heading">Service your Appliances to make them work again!</p>
+                    <div class="service-preview-btn">
+                        <a class="btn btn-book" href="/service?service=Appliances Service">Book Now</a>
+                    </div>
+                </div>
+                <div class="service-preview-image-div">
+                    <img class="service-preview-image" src="Images/appliances.png">
+                </div>
+            </div>
+
+            <div class="service-preview" style="background-color: #B4362E;">
+                <div class="service-preview-leftside">
+                    <p class="service-heading">Fix your electrical problems</p>
+                    <div class="service-preview-btn">
+                        <a class="btn btn-book" href="/service?service=Electrical Service">Book Now</a>
+                    </div>
+                </div>
+                <div class="service-preview-image-div">
+                    <img class="service-preview-image" src="Images/electrical work.png">
+                </div>
+            </div>
+
+            <div class="service-preview" style="background-color: #b99f27;">
+                <div class="service-preview-leftside">
+                    <p class="service-heading">Get your furniture fixed to look brand new</p>
+                    <div class="service-preview-btn">
+                        <a class="btn btn-book" href="/service?service=Furniture Service">Book Now</a>
+                    </div>
+                </div>
+                <div class="service-preview-image-div">
+                    <img class="service-preview-image" src="Images/furniture work.png">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="service-header">Appliances</h2>
+        <h3 class="service-header-description">Servicing, Repair, Installation & Uninstallation</h3>
+
+        <div class="appliance-services">
+            <div class="appliance-service">
+                <a class="appliance-preview" href="/service?service=Appliances Service"><img class="appliance-preview-image"
+                        src="Images/refrigerator.png"></a>
+                <h3 class="appliance-name">Refrigerator</h3>
+            </div>
+            <div class="appliance-service">
+                <a class="appliance-preview" href="/service?service=Appliances Service"><img class="appliance-preview-image" src="Images/ac.png"></a>
+                <h3 class="appliance-name">AC</h3>
+            </div>
+            <div class="appliance-service">
+                <a class="appliance-preview" href="/service?service=Appliances Service"><img class="appliance-preview-image"
+                        src="Images/washing machine.png"></a>
+                <h3 class="appliance-name">Washing Machine</h3>
+            </div>
+            <div class="appliance-service">
+                <a class="appliance-preview" href="/service?service=Appliances Service"><img class="appliance-preview-image" src="Images/tv.png"></a>
+                <h3 class="appliance-name">TV</h3>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a class="footer-link" href="/">About Us</a>
+            <a class="footer-link" href="/">Terms and Conditions</a>
+            <a class="footer-link" href="/">Privacy Policy</a>
+        </div>
+
+        <div class="line">
+            <hr>
+        </div>
+
+        <div class="company-details">
+            <img class="home-logo" src="Images/logo.png">
+            <p class="company-registration">© 2023 Homefix Pvt. Ltd.</p>
+
+            <a class="social-link" href="https://www.twitter.com" target="_blank"><ion-icon
+                    name="logo-twitter"></ion-icon></a>
+            <a class="social-link" href="https://www.youtube.com" target="_blank"><ion-icon
+                    name="logo-youtube"></ion-icon></a>
+            <a class="social-link" href="https://www.instagram.com" target="_blank"><ion-icon
+                    name="logo-instagram"></ion-icon></a>
+        </div>
+    </footer>
+    
+    <script src="js/home.js"></script>
+</body>
+
+</html>

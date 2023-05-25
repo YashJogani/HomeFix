@@ -1,0 +1,249 @@
+@font-face {
+    font-family: 'Inria Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/inriasans/v14/ptRMTiqXYfZMCOiVj9kQ1On4KA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Inria Sans";
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.home-logo {
+    height: 50px;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 70px;
+    background-color: #2c2c2c;
+}
+
+.nav-bar {
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+    align-items: center;
+    margin: auto 30px;
+}
+
+.nav-bar a {
+    font-family: "Inria Sans";
+    font-size: 16px;
+    padding: 7px 20px;
+    margin: 0px 3px;
+    color: #fff;
+    min-width: 80px;
+    text-align: center;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-bar a:hover {
+    background-color: #3c3c3c;
+}
+
+.currentpage {
+    background-color: #3c3c3c;
+}
+
+.section-header {
+    font-family: "Inria Sans";
+    font-weight: "bold";
+    color: #000000;
+    text-align: center;
+    font-size: 30px;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+.div-create-account {
+    font-family: "Inria Sans";
+    padding: 30px;
+    width: 450px;
+    margin: 50px auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.div-create-account h1 {
+    font-size: 30px;
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.div-create-account p {
+    font-size: 16px;
+    text-align: center;
+    margin: 0px;
+}
+
+.create-account-failed {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+    margin-top: 30px;
+    height: 45px;
+    background-color: #ffc2c2;
+    border-radius: 5px;
+    border: 1px solid #ff0000;
+}
+
+#error-message {
+    font-size: 17px;
+    color: #ff0000;
+}
+
+.create-account {
+    display: grid;
+    row-gap: 10px;
+    padding-top: 20px;
+}
+
+.user-name {
+    display: flex;
+}
+
+.form-items {
+    display: grid;
+    margin: 10px;
+}
+
+.form-items label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.form-items input {
+    font-size: 18px;
+    padding: 0px 10px;
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid #6a6a6a;
+    outline: none;
+    transition: 0.05s;
+}
+
+.form-items input:focus {
+    border: 1px solid #64a9f9;
+    outline: 2px solid #64a9f9;
+}
+
+.form-items input::placeholder {
+    font-size: 17px;
+}
+
+.div-password {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.password-toggle {
+    display: none;
+    position: absolute;
+    align-self: center;
+    right: 20px;
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+::-ms-reveal {
+    display: none;
+}
+
+.submit-button {
+    font-size: 18px;
+    height: 45px;
+    background-color: #1880ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.submit-button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.login {
+    font-size: 16px;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.login a {
+    color: #0077ff;
+    text-decoration: none;
+}
+
+.main-footer {
+    display: block;
+    padding: 20px 100px;
+    margin-top: auto;
+    background-color: #2c2c2c;
+}
+
+.footer-links {
+    display: flex;
+    padding: 10px 20px;
+}
+
+.footer-link {
+    font-family: 'Inria Sans';
+    font-size: 16px;
+    color: #fff;
+    margin: 0px 25px;
+    text-decoration: none;
+}
+
+.line {
+    padding: 0px 45px;
+    margin: 0px;
+}
+
+.company-details {
+    display: flex;
+    align-items: center;
+    padding: 10px 45px;
+}
+
+.company-registration {
+    font-family: 'Inria Sans';
+    font-size: 14px;
+    color: #fff;
+    margin: 0px 30px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    margin: 0px 15px;
+}
+
+.social-link ion-icon {
+    color: #fff;
+    transform: scale(1.2);
+}

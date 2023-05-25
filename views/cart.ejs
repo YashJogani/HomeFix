@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Cart</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="css/cart-styles.css" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <script type="module" src="https://unpkg.com/ionicons@5.2/dist/ionicons/ionicons.esm.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="/"><img class="home-logo" src="Images/logo.png"></a>
+        <div class="nav-bar">
+            <a href="/">Home</a>
+            <a href="/profile"><%= username %></a>
+            <a class="currentpage" href="/cart">Cart</a>
+            <a href="/orders">Orders</a>
+            <a href="/">About us</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="div-cart">
+            <h1>Cart</h1>
+            <hr>
+            <% if (!cart.length) { %>
+            <div class="empty-cart">
+                <img src="Images/empty-cart.png">
+                <h2>Your Cart is Empty!</h2>
+            </div>
+            <% } else { %>
+            <div class="cart-details">
+                <div class="service">
+                    <div class="service-details">
+                        <h3>SERVICE DETAILS</h3>
+                    </div>
+
+                    <div class="service-details-remaining">
+                        <div>
+                            <h3>QUANTITY</h3>
+                        </div>
+                        <div>
+                            <h3>PRICE</h3>
+                        </div>
+                        <div>
+                            <h3>TOTAL PRICE</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <% cart.forEach(function(item) { %>
+                <div class="service">
+                    <div class="service-details">
+                        <div class="service-preview-image">
+                            <img src="<%= item.id.services[item.servicetype].image %>">
+                        </div>
+                        <h2><%= item.id.services[item.servicetype].title %></h2>
+                    </div>
+
+                    <div class="service-details-remaining">
+                        <div class="quantity">
+                            <button type="button"
+                                style="background-color: #ff5050; border-top-left-radius: 3px; border-bottom-left-radius: 3px;">-</button>
+                            <input type="number" value="1" min="1" max="10" readonly>
+                            <button type="button"
+                                style="background-color: #0693ff; border-top-right-radius: 3px; border-bottom-right-radius: 3px;">+</button>
+                        </div>
+                        <div>
+                            <h3>₹ <%= item.id.services[item.servicetype].price %></h3>
+                        </div>
+                        <div class="service-price-with-remove">
+                            <h3 id="service-total-price">₹
+                                <%= item.id.services[item.servicetype].price * item.quantity %></h3>
+                            <button class="remove-button" type="button"><ion-icon
+                                    name="trash-bin-outline"></ion-icon></button>
+                        </div>
+                    </div>
+                </div>
+                <% })%>
+            </div>
+
+            <div class="div-checkout">
+                <div class="continue-shopping">
+                    <a href="/"><ion-icon class="continue-shopping-arrow" name="arrow-back"></ion-icon>Continue
+                        Shopping</a>
+                </div>
+                <div class="checkout">
+                    <div>
+                        <h4 id="subtotal">Sub Total: ₹ 0</h4>
+                        <button type="button" onclick="confirmOrder()">Checkout</button>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a class="footer-link" href="/">About Us</a>
+            <a class="footer-link" href="/">Terms and Conditions</a>
+            <a class="footer-link" href="/">Privacy Policy</a>
+        </div>
+
+        <div class="line">
+            <hr>
+        </div>
+
+        <div class="company-details">
+            <img class="home-logo" src="Images/logo.png">
+            <p class="company-registration">© 2023 Homefix Pvt. Ltd.</p>
+
+            <a class="social-link" href="https://www.twitter.com" target="_blank"><ion-icon
+                    name="logo-twitter"></ion-icon></a>
+            <a class="social-link" href="https://www.youtube.com" target="_blank"><ion-icon
+                    name="logo-youtube"></ion-icon></a>
+            <a class="social-link" href="https://www.instagram.com" target="_blank"><ion-icon
+                    name="logo-instagram"></ion-icon></a>
+        </div>
+    </footer>
+
+    <script>
+        const cartItems = <%- JSON.stringify(cart); %>
+    </script>
+    <script src="js/cart-script.js"></script>
+</body>
+
+</html>

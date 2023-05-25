@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'Inria Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/inriasans/v14/ptRMTiqXYfZMCOiVj9kQ1On4KA.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Inria Sans";
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-width: 1004px;
+    min-height: 100vh;
+}
+
+.home-logo {
+    height: 50px;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 70px;
+    background-color: #2c2c2c;
+}
+
+.nav-bar {
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+    align-items: center;
+    margin: auto 30px;
+}
+
+.nav-bar a {
+    font-family: "Inria Sans";
+    font-size: 16px;
+    padding: 7px 20px;
+    margin: 0px 3px;
+    color: #fff;
+    min-width: 80px;
+    text-align: center;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-bar a:hover {
+    background-color: #3c3c3c;
+}
+
+.currentpage {
+    background-color: #3c3c3c;
+}
+
+.container {
+    width: 65%;
+    min-width: 850px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+.div-profile {
+    display: block;
+    font-family: "Inria Sans";
+    margin: 50px auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.div-profile h1 {
+    font-family: "Inria Sans";
+    color: #000000;
+    font-size: 30px;
+    padding: 30px;
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+.div-profile hr {
+    margin: 5px 30px;
+}
+
+.details {
+    padding: 16px 30px;
+}
+
+.details h2 {
+    font-size: 18px;
+    margin: 7px 0px;
+    margin-right: 7px;
+}
+
+.details p {
+    font-size: 18px;
+    margin: 7px 0px;
+}
+
+.details div {
+    display: flex;
+}
+
+.logout {
+    font-size: 16px;
+    width: 100px;
+    height: 35px;
+    margin: 16px 0px;
+    margin-bottom: 10px;
+    color: #fff;
+    border: none;
+    background-color: #ff5050;
+    border-radius: 3px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.logout:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.main-footer {
+    display: block;
+    padding: 20px 100px;
+    margin-top: auto;
+    background-color: #2c2c2c;
+}
+
+.footer-links {
+    display: flex;
+    padding: 10px 20px;
+}
+
+.footer-link {
+    font-family: 'Inria Sans';
+    font-size: 16px;
+    color: #fff;
+    margin: 0px 25px;
+    text-decoration: none;
+}
+
+.line {
+    padding: 0px 45px;
+    margin: 0px;
+}
+
+.company-details {
+    display: flex;
+    align-items: center;
+    padding: 10px 45px;
+}
+
+.company-registration {
+    font-family: 'Inria Sans';
+    font-size: 14px;
+    color: #fff;
+    margin: 0px 30px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    margin: 0px 15px;
+}
+
+.social-link ion-icon {
+    color: #fff;
+    transform: scale(1.2);
+}
