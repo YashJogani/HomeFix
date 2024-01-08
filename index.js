@@ -1,4 +1,5 @@
 const express = require("express");
+const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
 const { User, Services } = require('./models');
 const path = require("path");
@@ -13,8 +14,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const url = 'mongodb+srv://yash:7511@homefix.rpdxjzv.mongodb.net/Homefix?retryWrites=true&w=majority';
-mongoose.connect(url);
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 let userId = null;
 let username = null;
 
