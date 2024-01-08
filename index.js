@@ -23,7 +23,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     store: new MongoDBStore({
-        uri: url,
+        uri: process.env.MONGO_URL,
         collection: 'sessions'
     }),
     cookie: {
